@@ -1,42 +1,36 @@
-# 웹 포트폴리오
+# 안녕하세요!
 
-안녕하세요! 웹 개발자를 꿈꾸는 저의 포트폴리오 페이지에 오신 것을 환영합니다.
+안녕하세요. 사용자에게 필요한 기능을 이해하고, 보기 쉽고 사용하기 편한 웹 서비스를 만드는 것을 목표로 하는 웹 개발자 백승주입니다.
 
-## 🎯 About Me
+## About Me
 
-웹 개발에 대한 열정과 창의성을 바탕으로 사용자 중심의 웹 서비스를 구현하는 것을 목표로 하고 있습니다.
+웹 개발을 학습하며 다양한 주제의 프로젝트를 진행해왔습니다. 화면 구성부터 데이터 흐름, 사용자 경험까지 함께 고려하며 기능을 구현하는 개발자가 되고자 합니다.
 
-## 💻 기술 스택
+작은 기능이라도 사용자가 자연스럽게 사용할 수 있는지 고민하고, 프로젝트를 통해 배운 내용을 바탕으로 꾸준히 개선해 나가는 것을 중요하게 생각합니다.
 
-- Frontend: HTML5, CSS3, JavaScript, React
-- Backend: Node.js, Express
-- Database: MongoDB, MySQL
+## Projects
+
+### 1. 카페 키오스크
+
+카페 키오스크를 주제로 진행한 웹 개발 프로젝트입니다. 사용자가 메뉴를 확인하고 주문 흐름을 경험할 수 있는 서비스를 목표로 구성한 프로젝트입니다.
+
+### 2. 폰가이즈
+
+폰가이즈는 휴대폰 관련 서비스를 주제로 진행한 웹 개발 프로젝트입니다. 사용자가 필요한 정보를 확인하고 서비스를 이용할 수 있도록 구성하는 데 초점을 둔 프로젝트입니다.
+
+### 3. 아파트 종합관리시스템
+
+아파트 종합관리시스템은 아파트 관리 업무를 웹에서 다룰 수 있도록 구성한 프로젝트입니다. 관리 시스템의 구조와 기능 흐름을 이해하고 구현하는 경험을 쌓은 프로젝트입니다.
+
+## Skills
+
+- Frontend: HTML, CSS, JavaScript
 - Version Control: Git, GitHub
+- Web Development: 웹 페이지 구성, 사용자 흐름 설계, 프로젝트 문서화
 
-## 🚀 프로젝트
+## Contact
 
-- 쇼핑몰 웹사이트
-    
-    - React와 Node.js를 활용한 풀스택 프로젝트
-    - 사용자 인증, 상품 관리, 장바구니 기능 구현
-    - 반응형 디자인 적용
-    
-- 일정 관리 앱
-    
-    - React와 MongoDB를 이용한 CRUD 기능 구현
-    - 실시간 데이터 업데이트
-    - 사용자 친화적 UI/UX 디자인
-    
+- Email: [seungjuu.baek@gmail.com](mailto:seungjuu.baek@gmail.com)
+- GitHub: [github.com/seungjuubaek-b](https://github.com/seungjuubaek-b)
 
-## 📚 교육
-
-- 컴퓨터공학 전공
-- 웹 개발 부트캠프 수료
-
-## 📞 연락처
-
-- 이메일: [example@email.com](mailto:example@email.com)
-- GitHub: [github.com/username](http://github.com/username)
-- LinkedIn: [linkedin.com/in/username](http://linkedin.com/in/username)
-
-함께 일하고 싶으시다면 언제든 연락 주세요!
+함께 성장하며 좋은 서비스를 만들어갈 기회를 기다리고 있습니다. 감사합니다.
