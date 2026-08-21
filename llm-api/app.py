@@ -34,7 +34,9 @@ class AskRequest(BaseModel):
     # TODO: temperature 를 추가한다. 기본값 0.7, 허용 범위는 노트북 03에서 확인한 값으로 제한한다
     # TODO: max_output_tokens 를 추가한다. 기본값 256, 1 이상 2048 이하
     # TODO: system_instruction 을 추가한다. 없어도 되는 값이다
-
+    temperature: float = Field(default=0.7, ge=0.0, le=2.0)
+    max_output_tokens: int = Field(default=256, ge=1, le=2048)
+    system_instruction: str | None = None
 
 class Usage(BaseModel):
     input_tokens: int
@@ -59,12 +61,17 @@ def ask(req: AskRequest):
     """질문 하나를 받아 Gemini 응답과 토큰 사용량을 함께 돌려준다."""
     config = types.GenerateContentConfig(
         # TODO: req 의 temperature / max_output_tokens / system_instruction 을 넘긴다
+        temperature=req.temperature,
+        max_output_tokens=req.max_output_tokens,
+        system_instruction=req.system_instruction,
     )
     try:
         r = client.models.generate_content(model=MODEL, contents=req.question, config=config)
     except Exception as e:
         # TODO: 429 / 503 처럼 일시적인 오류는 클라이언트에 503 으로 내려준다.
         #       우리 코드의 버그가 아니므로 500 을 쓰지 않는다 (노트북 02 참고)
+        if any(k in str(e) for k in ("429", "RESOURCE_EXHAUSTED", "503", "UNAVILABLE")):
+            raise HTTPException(status_code=503, detail="지금은 응답할 수 없습니다.") from e
         raise HTTPException(status_code=502, detail=f"{type(e).__name__}: {str(e)[:200]}") from e
 
     u = r.usage_metadata
@@ -73,5 +80,5 @@ def ask(req: AskRequest):
         model=r.model_version,
         # TODO: usage_metadata 의 세 값을 Usage 에 담는다
         #       Gemini 쪽 이름과 우리 API 의 이름이 다르다 — 무엇이 무엇에 대응하는지 확인할 것
-        usage=Usage(input_tokens=0, output_tokens=0, total_tokens=0),
+        usage=Usage(input_tokens=u.prompt_token_count, output_tokens=u.candidates_token_count or 0, total_tokens=u.total_token_count),
     )
